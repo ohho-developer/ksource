@@ -1,7 +1,7 @@
 .landing-page {
   background-color: #ffffff;
-  width: 100%;
-  min-width: 1440px;
+  width: 1440px;
+  margin: 0 auto;
   min-height: 5213px;
   position: relative;
 }
@@ -22,8 +22,10 @@
 
 .landing-page .navigation-footer {
   position: absolute;
-  width: 100%;
-  left: 0;
+  width: 1440px;
+  max-width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   top: 4436px;
   height: 206px;
   display: flex;
@@ -34,8 +36,10 @@
 .landing-page .divider {
   position: absolute;
   top: 1px;
-  left: 80px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 1280px;
+  max-width: calc(100% - 160px);
   height: 1px;
   background-color: #e6e6e6;
 }
@@ -71,7 +75,8 @@
 .landing-page .social-icons {
   position: absolute;
   top: 112px;
-  left: 80px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 184px;
   height: 40px;
 }
@@ -107,8 +112,9 @@
 
 .landing-page .navigation-footer .text-wrapper-2 {
   position: absolute;
-  top: 52px;
-  left: 80px;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 101px;
   height: 36px;
   margin: 0;
@@ -385,8 +391,10 @@
 .landing-page .value-proposition-section {
   position: absolute;
   top: 2198px;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1440px;
+  max-width: 100%;
   height: 595px;
 }
 
@@ -415,8 +423,10 @@
 .landing-page .steps-section {
   position: absolute;
   top: 3082px;
-  left: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1440px;
+  max-width: 100%;
 }
 
 .landing-page .text-wrapper-7 {
@@ -559,8 +569,10 @@
 .landing-page .section {
   position: absolute;
   top: 4098px;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 1440px;
+  max-width: 100%;
   height: 236px;
   background-color: #f7f7f7;
 }
@@ -609,11 +621,13 @@
 .landing-page .navigation-footer .buttons {
   position: absolute;
   top: 48px;
-  left: 721px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 623px;
   height: 24px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 44px;
 }
 
@@ -845,8 +859,10 @@
 .landing-page .this-form-is {
   position: absolute;
   top: 3940px;
-  left: 80px;
+  left: 50%;
+  transform: translateX(-50%);
   width: 1280px;
+  max-width: calc(100% - 160px);
   height: 72px;
   display: flex;
   align-items: center;
