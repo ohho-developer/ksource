@@ -1,85 +1,165 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>K-Source</title>
-    <style>
-        body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            margin: 0;
-            background-color: #f7f7f7;
-            color: #1f2933;
-        }
-
-        header {
-            background: linear-gradient(135deg, #2563eb, #8b5cf6);
-            color: #ffffff;
-            padding: 80px 0;
-        }
-
-        .container {
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        h1 {
-            font-size: 2.75rem;
-            margin-bottom: 12px;
-            letter-spacing: -0.5px;
-        }
-
-        p.lead {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-bottom: 0;
-            opacity: 0.9;
-        }
-
-        section {
-            padding: 48px 0;
-        }
-
-        .card {
-            background-color: #ffffff;
-            border-radius: 16px;
-            padding: 32px;
-            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.1);
-        }
-
-        .card h2 {
-            margin-top: 0;
-            font-size: 1.75rem;
-            color: #1d4ed8;
-        }
-
-        .card p {
-            margin-bottom: 0;
-            line-height: 1.7;
-        }
-    </style>
-</head>
-<body>
-<header>
-    <div class="container">
-        <h1>K-Source에 오신 것을 환영합니다!</h1>
-        <p class="lead">지식을 공유하고 함께 성장하는 커뮤니티를 위한 간단한 시작 페이지입니다.</p>
-    </div>
-</header>
-
-<section>
-    <div class="container">
-        <div class="card">
-            <h2>지금 준비 중입니다</h2>
-            <p>
-                Django 기반 웹사이트의 기본 구성을 완료했습니다. 곧 더 많은 콘텐츠와 기능을 추가할
-                예정이니 기대해 주세요. 프로젝트를 로컬에서 실행하려면 터미널에서
-                <code>venv\Scripts\python.exe manage.py runserver</code> 명령을 실행하세요.
-            </p>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>K-Source | K-Food Sourcing Platform</title>
+    <link rel="stylesheet" href="{% static 'css/globals.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/styleguide.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="landing-page">
+      <!-- Navigation -->
+      <div class="navigation">
+        <div class="text-wrapper-2">K-source</div>
+        <div class="navbar">
+          <span class="text-wrapper-3">Home</span>
+          <span class="text-wrapper-3">For Buyers</span>
+          <span class="text-wrapper-3">For Suppliers</span>
+          <span class="text-wrapper-3">Categories</span>
+          <span class="text-wrapper-3">About Us</span>
+          <span class="button">
+            <div class="text-wrapper-4">Contact</div>
+          </span>
         </div>
-    </div>
-</section>
-</body>
-</html>
+      </div>
 
+      <!-- Hero Section with Title (Copy) -->
+      <div class="copy-hero">
+        <div class="page-title">
+          <div class="text-wrapper-13">Your Direct Source for Verified K-Food Manufacturers.</div>
+          <div class="text-wrapper-14">Stop Searching. Start Sourcing.</div>
+        </div>
+        <a href="#request" class="button-2">
+          <div class="text-wrapper-11">Post Your Free Sourcing Request</div>
+        </a>
+      </div>
+
+      <!-- Hero Image Section -->
+      <div class="hero-image"></div>
+      <div class="div-wrapper">
+        <div class="p">Post your exact K-Food needs (RFP) and receive competitive quotes directly from our network of export-ready, verified Korean suppliers.</div>
+      </div>
+
+      <!-- Pain Points Section -->
+      <div class="pain-points-section">
+        <div class="text-wrapper-5">Finding the Right K-Food Partner is Hard.</div>
+        <div class="frame">
+          <div class="card">
+            <div class="image">
+              <svg class="mingcute-time-line" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" fill="#000000"/>
+              </svg>
+            </div>
+            <div class="copy">
+              <div class="text-wrapper-6">Tired of browsing<br/>unverified directories?</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="image">
+              <svg class="el-check" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z" fill="#000000"/>
+              </svg>
+            </div>
+            <div class="copy">
+              <div class="text-wrapper-6">Worried about factory certifications</div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="image">
+              <svg class="hugeicons-message" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z" fill="#000000"/>
+              </svg>
+            </div>
+            <div class="copy">
+              <div class="text-wrapper-6">Wasting time on dead-end inquiries and slow communication?</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Value Proposition Section -->
+      <div class="value-proposition-section">
+        <div class="we-don-t-just-list">We Don't Just List. We Connect.</div>
+        <div class="text">
+          <div class="text-2">
+            <div class="text-wrapper-8">Post 1 Request, Get Multiple Bids.</div>
+            <div class="text-wrapper-9">Submit one detailed RFP for your OEM/PB needs. Our qualified suppliers come to you.</div>
+          </div>
+          <div class="text-2">
+            <div class="text-wrapper-10">Source with 100% Confidence.</div>
+            <div class="text-wrapper-9">We pre-vet every supplier on our platform. No traders, no fakes. Only export-ready manufacturers verified for quality and reliability.</div>
+          </div>
+          <div class="text-2">
+            <div class="text-wrapper-10">Your Sourcing Agent in Korea.</div>
+            <div class="text-wrapper-9">Need to consolidate samples? Need an on-site factory audit? Our optional Concierge Service handles the complex logistics for you.</div>
+          </div>
+          <a href="#request" class="button-2">
+            <div class="text-wrapper-11">Post Your Free Sourcing Request</div>
+          </a>
+        </div>
+        <div class="image-2"></div>
+        <div class="image-3"></div>
+      </div>
+
+      <!-- Steps Section -->
+      <div class="steps-section">
+        <div class="text-wrapper-7">Get Sourced in 3 Simple Steps</div>
+        <div class="frame-2">
+          <div class="text-3">
+            <div class="text-wrapper-15">Step 1: SUBMIT YOUR RFQ</div>
+            <div class="text-wrapper-16">Tell us exactly what you need<br/>(product specs, quantity, certs).</div>
+          </div>
+          <div class="text-4">
+            <div class="text-wrapper-15">Step 2: RECEIVE QUOTES</div>
+            <div class="text-wrapper-16">Receive tailored quotes directly from<br/>our vetted manufacturers.</div>
+          </div>
+          <div class="text-5">
+            <div class="text-wrapper-15">Step 3: CONNECT & TRANSACT</div>
+            <div class="text-wrapper-16">Choose your ideal partner and<br/>start your business.</div>
+          </div>
+          <div class="frame-3">
+            <div class="line"></div>
+            <div class="ellipse"></div>
+            <div class="ellipse-2"></div>
+            <div class="ellipse-3"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Post Your Free Sourcing Request Title -->
+      <div class="text-wrapper">Post Your Free Sourcing Request</div>
+
+      <!-- Description Text -->
+      <div class="this-form-is">This form is 100% free and confidential.<br/>Our sourcing experts will review your request and connect you with qualified suppliers within 48 hours.</div>
+
+      <!-- CTA Section -->
+      <div class="section">
+        <div class="text-wrapper-12">Submit My Request</div>
+        <div class="copy-2">
+          <a href="mailto:contact@k-source.com?subject=K-Source%20Sourcing%20Request" class="button-3">
+            <div class="text-wrapper-4">Post Your Free Sourcing Request</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="navigation-footer">
+        <div class="divider"></div>
+        <div class="text-wrapper-2">K-source</div>
+        <div class="social-icons"></div>
+        <div class="buttons">
+          <a href="#buyers" class="footer-link">For Buyers</a>
+          <a href="#suppliers" class="footer-link">For Suppliers</a>
+          <a href="#privacy" class="footer-link">Privacy Policy</a>
+          <a href="mailto:contact@k-source.com" class="footer-link">contact@k-source.com</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

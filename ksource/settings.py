@@ -13,8 +13,13 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 import os
 from pathlib import Path
 
+from django.core.exceptions import ImproperlyConfigured
+from dotenv import load_dotenv
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+load_dotenv(BASE_DIR / ".env")
 
 
 # Quick-start development settings - unsuitable for production
@@ -25,13 +30,14 @@ def env_list(key: str, default: str = "") -> list[str]:
     return [item.strip() for item in os.getenv(key, default).split(",") if item.strip()]
 
 
-ENVIRONMENT = os.getenv("DJANGO_ENV", "development")
+ENVIRONMENT = os.getenv("DJANGO_ENV", "development").lower()
+DEFAULT_DEV_SECRET_KEY = "django-insecure-dev-placeholder-key"
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv(
-    "DJANGO_SECRET_KEY",
-    "",
-)
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", DEFAULT_DEV_SECRET_KEY)
+
+if ENVIRONMENT == "production" and SECRET_KEY == DEFAULT_DEV_SECRET_KEY:
+    raise ImproperlyConfigured("DJANGO_SECRET_KEY must be set for production environments.")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv(
@@ -57,6 +63,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -133,6 +140,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [BASE_DIR / 'static']
+
+# WhiteNoise configuration
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Security headers commonly required when running behind a proxy/load balancer
 SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
